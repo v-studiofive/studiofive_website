@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Studio Five Landing&lt;/title&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Lucide Icons --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/lucide@latest"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Custom Fonts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap');</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.font-display { font-family: 'Space Grotesk', sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.font-mono { font-family: 'Space Mono', monospace; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.marquee-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.marquee-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: marquee 20s linear infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes marquee {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: translateX(0); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: translateX(-50%); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bento-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bento-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 8px 8px 0px 0px #ccff00;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.blob {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filter: blur(40px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.4;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Hide Scrollbar for clean look */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #ccff00;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Mobile Menu Transitions */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#mobile-menu {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#mobile-menu.open {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 400px; /* Adjust based on content */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="min-h-screen bg-[#1a1a1a] text-[#f4f4f4] font-sans selection:bg-[#ccff00] selection:text-black overflow-x-hidden"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Navigation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav id="navbar" class="fixed w-full z-50 transition-all duration-300 border-b border-transparent py-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-6 flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-2xl font-display font-bold tracking-tighter flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="bg-[#ccff00] text-black w-8 h-8 flex items-center justify-center rounded-full text-lg"&gt;5&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>StudioFive</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hidden md:flex items-center gap-8 font-mono text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="scrollToSection('about')" class="hover:text-[#ccff00] transition-colors"&gt;About&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="scrollToSection('framework')" class="hover:text-[#ccff00] transition-colors"&gt;The Framework&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="scrollToSection('pricing')" class="hover:text-[#ccff00] transition-colors"&gt;Pricing&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="scrollToSection('contact')" class="bg-[#ccff00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#b3e600] transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>High Five Your Strategy</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="toggleMenu()" class="md:hidden text-[#f4f4f4]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i id="menu-icon" data-lucide="menu" width="24" height="24"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i id="close-icon" data-lucide="x" width="24" height="24" class="hidden"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Mobile Menu --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="mobile-menu" class="absolute top-full left-0 w-full bg-[#1a1a1a] border-b border-[#333] flex flex-col gap-4 md:hidden font-mono px-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="scrollToSection('about')" class="text-left py-2 hover:text-[#ccff00] mt-4"&gt;About&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="scrollToSection('framework')" class="text-left py-2 hover:text-[#ccff00]"&gt;The Framework&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="scrollToSection('pricing')" class="text-left py-2 hover:text-[#ccff00]"&gt;Pricing&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="scrollToSection('contact')" class="bg-[#ccff00] text-black py-3 rounded-full font-bold text-center mt-2 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Let's Chat</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Background Blobs --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="blob bg-[#ccff00] w-64 h-64 rounded-full top-20 right-[-100px] animate-pulse"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="blob bg-[#c0a6ff] w-96 h-96 rounded-full bottom-0 left-[-150px]"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="inline-block bg-[#333] px-4 py-2 rounded-full font-mono text-xs text-[#ccff00] tracking-widest uppercase mb-4 border border-[#444]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>● Open for Coaching Q1 2026</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="text-5xl md:text-7xl font-display font-bold leading-[0.9] tracking-tight"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Marketing that &lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ccff00] to-[#c0a6ff]"&gt;actually feels&lt;/span&gt; &lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>like you.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-400 text-lg md:text-xl max-w-md font-mono leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Ditch the generic blueprints. We build loud, proud, and profitable strategies for creative founders.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col sm:flex-row gap-4 pt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('contact')" class="bg-[#ccff00] text-black px-8 py-4 rounded-full font-bold font-display text-lg hover:bg-[#f4f4f4] hover:scale-105 transition-all flex items-center justify-center gap-2 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Start Your Strategy &lt;i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('framework')" class="border border-[#444] text-[#f4f4f4] px-8 py-4 rounded-full font-bold font-display text-lg hover:border-[#ccff00] hover:text-[#ccff00] transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>See How It Works</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Hero Image / Graphic --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative z-10 bg-[#f4f4f4] text-black p-8 rounded-[2rem] transform rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-[#c0a6ff]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-start mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-black text-white p-2 rounded-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="zap" fill="#ccff00" class="text-[#ccff00]"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="font-mono text-sm font-bold opacity-50"&gt;@StudioFive&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-3xl font-display font-bold mb-4"&gt;Your Brand Energy&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-8 h-8 bg-[#ccff00] rounded-full flex items-center justify-center font-bold"&gt;✓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="font-mono font-bold"&gt;Authentic Voice&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-8 h-8 bg-[#ccff00] rounded-full flex items-center justify-center font-bold"&gt;✓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="font-mono font-bold"&gt;Killer Content&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-8 h-8 bg-[#ccff00] rounded-full flex items-center justify-center font-bold"&gt;✓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="font-mono font-bold"&gt;Zero Burnout&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-8 bg-black text-[#ccff00] p-4 rounded-xl font-mono text-center text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"Wait, marketing is fun now?"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Background Element behind card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="absolute top-4 left-4 w-full h-full border-4 border-[#ccff00] rounded-[2rem] -z-10 transform -rotate-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Marquee Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bg-[#ccff00] text-black py-4 border-y-4 border-black marquee-container font-display font-bold text-2xl md:text-4xl uppercase tracking-tighter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="marquee-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;Strategy • Growth • Hype&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;No Boring content&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;Scale Your Business&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;StudioFive&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;Strategy • Growth • Hype&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;No Boring content&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;Scale Your Business&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;StudioFive&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="mx-8"&gt;✦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- About Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about" class="py-24 px-6 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Box 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="md:col-span-2 bg-[#222] p-8 md:p-12 rounded-3xl border border-[#333] hover:border-[#ccff00] transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl md:text-5xl font-display font-bold mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Less "Corporate", &lt;br/&gt;More &lt;span class="text-[#c0a6ff]"&gt;Creative.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 font-mono text-lg leading-relaxed mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Hi, I'm the brain behind StudioFive. I noticed most marketing advice was designed for boring boardrooms, not vibrant businesses.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>I help you find the sweet spot between "data-driven" and "totally unhinged creativity."</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex gap-4 flex-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="bg-[#333] px-4 py-2 rounded-full text-sm font-mono border border-[#444]"&gt;Ex-Agency Strategist&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="bg-[#333] px-4 py-2 rounded-full text-sm font-mono border border-[#444]"&gt;Coffee Addict&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="bg-[#333] px-4 py-2 rounded-full text-sm font-mono border border-[#444]"&gt;Hype Woman&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Box 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#f4f4f4] text-black p-8 md:p-12 rounded-3xl flex flex-col justify-between bento-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="trending-up" width="48" height="48" class="mb-4 text-[#c0a6ff]"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold font-display"&gt;Client Wins&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-6xl font-display font-bold mb-2"&gt;150+&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="font-mono text-sm opacity-70"&gt;Businesses Scaled&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Box 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#ccff00] text-black p-8 md:p-12 rounded-3xl bento-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="rocket" width="48" height="48" class="mb-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-3xl font-display font-bold mb-4"&gt;The Focus&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-mono font-bold"&gt;We don't guess. We test, we tweak, and we take off.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Box 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="md:col-span-2 bg-[#222] p-8 md:p-12 rounded-3xl border border-[#333] flex flex-col md:flex-row items-center gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-display font-bold mb-4 text-[#c0a6ff]"&gt;The "Anti-Boring" Promise&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-400 font-mono"&gt;If it puts you to sleep, we don't do it. Your marketing should be the most exciting part of your business, not a chore on your to-do list.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-16 h-16 bg-[#ccff00] rounded-full flex items-center justify-center text-black font-bold text-2xl transform hover:rotate-12 transition-transform"&gt;Fun&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-16 h-16 bg-[#c0a6ff] rounded-full flex items-center justify-center text-black font-bold text-2xl transform hover:-rotate-12 transition-transform mt-8"&gt;Fast&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-16 h-16 bg-[#f4f4f4] rounded-full flex items-center justify-center text-black font-bold text-2xl transform hover:rotate-12 transition-transform"&gt;Fab&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- The Framework Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="framework" class="py-24 px-6 bg-[#f4f4f4] text-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center max-w-2xl mx-auto mb-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-4xl md:text-6xl font-display font-bold mb-6"&gt;The StudioFive&lt;br/&gt;Method&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-mono text-gray-600 text-lg"&gt;Five steps to go from "Who are you?" to "Take my money."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-5 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Step 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl border-2 border-black hover:bg-[#ccff00] transition-colors group h-full flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-display font-bold text-[#e5e5e5] group-hover:text-black transition-colors mb-4"&gt;1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-display font-bold mb-2"&gt;Audit&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="font-mono text-sm leading-tight text-gray-600 group-hover:text-black"&gt;We tear it down to build it up stronger.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Step 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl border-2 border-black hover:bg-[#ccff00] transition-colors group h-full flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-display font-bold text-[#e5e5e5] group-hover:text-black transition-colors mb-4"&gt;2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-display font-bold mb-2"&gt;Align&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="font-mono text-sm leading-tight text-gray-600 group-hover:text-black"&gt;Defining your vibe and your tribe.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Step 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl border-2 border-black hover:bg-[#ccff00] transition-colors group h-full flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-display font-bold text-[#e5e5e5] group-hover:text-black transition-colors mb-4"&gt;3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-display font-bold mb-2"&gt;Action&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="font-mono text-sm leading-tight text-gray-600 group-hover:text-black"&gt;A content plan you'll actually stick to.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Step 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl border-2 border-black hover:bg-[#ccff00] transition-colors group h-full flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-display font-bold text-[#e5e5e5] group-hover:text-black transition-colors mb-4"&gt;4&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-display font-bold mb-2"&gt;Amplify&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="font-mono text-sm leading-tight text-gray-600 group-hover:text-black"&gt;Ads, funnels, and gasoline on the fire.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Step 5 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl border-2 border-black hover:bg-[#ccff00] transition-colors group h-full flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-display font-bold text-[#e5e5e5] group-hover:text-black transition-colors mb-4"&gt;5&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-display font-bold mb-2"&gt;Assess&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="font-mono text-sm leading-tight text-gray-600 group-hover:text-black"&gt;Review data, high five, repeat.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Pricing Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="pricing" class="py-24 px-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl md:text-6xl font-display font-bold text-center mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Ways to &lt;span class="text-[#ccff00]"&gt;Work Together&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Card 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#222] rounded-3xl p-8 border border-[#333] hover:border-[#ccff00] transition-all group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-[#333] w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ccff00] group-hover:text-black transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="zap" width="20" height="20"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-display font-bold mb-2"&gt;The Audit&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-mono text-gray-400 text-sm mb-6"&gt;Perfect for DIYers who just need a map.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-display font-bold mb-8"&gt;$497&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="space-y-4 mb-8 font-mono text-sm text-gray-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;i data-lucide="check-circle" width="16" class="text-[#ccff00]"&gt;&lt;/i&gt; 90-Minute Strategy Call&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;i data-lucide="check-circle" width="16" class="text-[#ccff00]"&gt;&lt;/i&gt; Website Roast&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;i data-lucide="check-circle" width="16" class="text-[#ccff00]"&gt;&lt;/i&gt; Content Calendar Template&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="w-full bg-[#333] text-white py-4 rounded-xl font-bold font-display hover:bg-[#ccff00] hover:text-black transition-colors"&gt;Book Now&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Card 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#c0a6ff] text-black rounded-3xl p-8 border-none relative transform md:-translate-y-4 shadow-[0_0_40px_rgba(192,166,255,0.3)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-[#c0a6ff] px-4 py-1 rounded-full font-mono text-xs font-bold uppercase tracking-widest"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Most Popular</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-black text-[#c0a6ff] w-12 h-12 rounded-full flex items-center justify-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="star" width="20" height="20"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-display font-bold mb-2"&gt;The Co-Pilot&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-mono text-black/70 text-sm mb-6"&gt;We build it, you run it. Best of both worlds.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-display font-bold mb-8"&gt;$1,250&lt;span class="text-sm font-normal"&gt;/mo&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="space-y-4 mb-8 font-mono text-sm text-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;div class="bg-black text-[#c0a6ff] rounded-full p-1"&gt;&lt;i data-lucide="check-circle" width="10" height="10"&gt;&lt;/i&gt;&lt;/div&gt; Bi-Weekly Coaching&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;div class="bg-black text-[#c0a6ff] rounded-full p-1"&gt;&lt;i data-lucide="check-circle" width="10" height="10"&gt;&lt;/i&gt;&lt;/div&gt; Full Content Strategy&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;div class="bg-black text-[#c0a6ff] rounded-full p-1"&gt;&lt;i data-lucide="check-circle" width="10" height="10"&gt;&lt;/i&gt;&lt;/div&gt; Email Support Access&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;div class="bg-black text-[#c0a6ff] rounded-full p-1"&gt;&lt;i data-lucide="check-circle" width="10" height="10"&gt;&lt;/i&gt;&lt;/div&gt; Analytics Review&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="w-full bg-black text-[#c0a6ff] py-4 rounded-xl font-bold font-display hover:bg-white hover:text-black transition-colors"&gt;Get Started&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Card 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#222] rounded-3xl p-8 border border-[#333] hover:border-[#ccff00] transition-all group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-[#333] w-12 h-12 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ccff00] group-hover:text-black transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="rocket" width="20" height="20"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-display font-bold mb-2"&gt;The Takeover&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-mono text-gray-400 text-sm mb-6"&gt;Hands-off growth. We handle everything.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-display font-bold mb-8"&gt;$3,500&lt;span class="text-sm font-normal"&gt;/mo&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="space-y-4 mb-8 font-mono text-sm text-gray-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;i data-lucide="check-circle" width="16" class="text-[#ccff00]"&gt;&lt;/i&gt; Full Social Management&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;i data-lucide="check-circle" width="16" class="text-[#ccff00]"&gt;&lt;/i&gt; Paid Ad Management&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li class="flex items-center gap-3"&gt;&lt;i data-lucide="check-circle" width="16" class="text-[#ccff00]"&gt;&lt;/i&gt; Weekly Reporting&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="w-full bg-[#333] text-white py-4 rounded-xl font-bold font-display hover:bg-[#ccff00] hover:text-black transition-colors"&gt;Apply Now&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Testimonials --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="py-24 px-6 border-t border-[#333]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl md:text-5xl font-display font-bold text-center mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Fan Mail &lt;i data-lucide="heart" class="inline text-[#ccff00] fill-[#ccff00]"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#222] p-6 rounded-2xl rounded-bl-none border border-[#333]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-4 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-10 h-10 bg-gray-600 rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="font-bold font-display"&gt;Sarah Jenkins&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-xs text-gray-400 font-mono"&gt;CEO, Bloom Co.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 font-mono text-sm"&gt;"StudioFive completely changed how I look at Instagram. I went from hating content creation to actually enjoying it. Plus, revenue is up 40%!"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#222] p-6 rounded-2xl rounded-bl-none border border-[#333] md:translate-y-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-4 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-10 h-10 bg-[#ccff00] rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="font-bold font-display"&gt;Mike Ross&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-xs text-gray-400 font-mono"&gt;Founder, Kinetic&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 font-mono text-sm"&gt;"Finally, a marketing coach who speaks human and not 'corporate robot'. The 5-step framework is genius."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#222] p-6 rounded-2xl rounded-bl-none border border-[#333]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-4 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-10 h-10 bg-[#c0a6ff] rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="font-bold font-display"&gt;Elena Rodriguez&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-xs text-gray-400 font-mono"&gt;Creative Director&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 font-mono text-sm"&gt;"I was stuck for months. One strategy session with StudioFive unlocked so much clarity. Highly recommend!"&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer id="contact" class="bg-[#ccff00] text-black pt-24 pb-12 px-6 rounded-t-[3rem]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-5xl md:text-8xl font-display font-bold mb-8 leading-tight"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Ready to &lt;br/&gt;Get Loud?</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="font-mono text-xl mb-12 max-w-xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Stop whispering to the void. Let's build a strategy that screams "market leader."</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="bg-black text-white px-10 py-5 rounded-full font-bold font-display text-xl hover:scale-105 transition-transform shadow-xl mb-20 flex items-center gap-3 mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Book Your Free Discovery Call &lt;i data-lucide="message-circle" width="24" height="24"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="border-t border-black/20 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-2xl font-display font-bold"&gt;StudioFive&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#" class="hover:underline"&gt;Instagram&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#" class="hover:underline"&gt;LinkedIn&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#" class="hover:underline"&gt;Email&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="opacity-60"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>© 2026 StudioFive Marketing. All vibes reserved.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Interactive Scripts (Menu &amp; Scroll) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize Icons</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lucide.createIcons();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Scroll Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('scroll', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const navbar = document.getElementById('navbar');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (window.scrollY &gt; 50) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>navbar.classList.add('bg-[#1a1a1a]/95', 'backdrop-blur-md', 'border-[#333]', 'py-4');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>navbar.classList.remove('bg-transparent', 'border-transparent', 'py-6');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>navbar.classList.remove('bg-[#1a1a1a]/95', 'backdrop-blur-md', 'border-[#333]', 'py-4');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>navbar.classList.add('bg-transparent', 'border-transparent', 'py-6');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Menu Toggle Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleMenu() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const menu = document.getElementById('mobile-menu');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const menuIcon = document.getElementById('menu-icon');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const closeIcon = document.getElementById('close-icon');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (menu.classList.contains('open')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>menu.classList.remove('open');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>menuIcon.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeIcon.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>menu.classList.add('open');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>menuIcon.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeIcon.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Smooth Scroll Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function scrollToSection(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const element = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (element) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>element.scrollIntoView({ behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Close menu if open</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const menu = document.getElementById('mobile-menu');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (menu.classList.contains('open')) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>toggleMenu();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
